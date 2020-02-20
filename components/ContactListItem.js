@@ -64,7 +64,7 @@ const styles = StyleSheet.create({
   },
   details: {
     justifyContent: 'center',
-    flex: 1,
+    // flex: 1,
     marginLeft: 20,
   },
   title: {
