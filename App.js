@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 import { NavigationContainer } from '@react-navigation/native'
 import AppNavigator from './routes'
@@ -8,7 +8,7 @@ export default function App() {
     <NavigationContainer>
       <AppNavigator />
     </NavigationContainer>
-  );
+  )
 }
 
 const styles = StyleSheet.create({

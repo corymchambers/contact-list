@@ -1,14 +1,14 @@
-import React from 'react';
+import React from 'react'
 import {
   StyleSheet,
   View,
   TouchableHighlight,
   Text,
   Image,
-} from 'react-native';
-import PropTypes from 'prop-types';
+} from 'react-native'
+import PropTypes from 'prop-types'
 
-import colors from '../utils/colors';
+import colors from '../utils/colors'
 
 export default function ContactListItem({
   name, avatar, phone, onPress,
@@ -33,7 +33,7 @@ export default function ContactListItem({
         </View>
       </View>
     </TouchableHighlight>
-  );
+  )
 }
 
 ContactListItem.propTypes = {
@@ -41,7 +41,7 @@ ContactListItem.propTypes = {
   avatar: PropTypes.string.isRequired,
   phone: PropTypes.string.isRequired,
   onPress: PropTypes.func.isRequired,
-};
+}
 
 const styles = StyleSheet.create({
   container: {
@@ -77,4 +77,4 @@ const styles = StyleSheet.create({
     fontSize: 15,
     marginTop: 4,
   },
-});
+})

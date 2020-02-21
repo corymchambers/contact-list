@@ -1,63 +1,66 @@
-import React from 'react';
+import React from 'react'
 import {
   StyleSheet,
   Text,
   View,
   FlatList,
   ActivityIndicator,
-} from 'react-native';
+} from 'react-native'
 
-import ContactListItem from '../components/ContactListItem';
+import ContactListItem from '../components/ContactListItem'
 
-import { fetchContacts } from '../utils/api';
+import { fetchContacts } from '../utils/api'
 
-const keyExtractor = ({ phone }) => phone;
+const keyExtractor = ({ phone }) => phone
 
 export default class Contacts extends React.Component {
+  static navigationOptions = {
+    // title: 'Contacts!'
+  }
   state = {
     contacts: [],
     loading: true,
     error: false,
-  };
+  }
 
   async componentDidMount() {
     try {
-      const contacts = await fetchContacts();
+      const contacts = await fetchContacts()
 
       this.setState({
         contacts,
         loading: false,
         error: false,
-      });
+      })
     } catch (e) {
       this.setState({
         loading: false,
         error: true,
-      });
+      })
     }
   }
 
   renderContact = ({ item }) => {
     const { navigation: { navigate }} = this.props
-    const { name, avatar, phone } = item;
+    const { name, avatar, phone } = item
 
     return <ContactListItem
       name={name}
       avatar={avatar}
       phone={phone}
-      onPress={() => {navigate('Profile')}}
+      onPress={() => navigate('Profile', { contact: item })}
     />
-  };
+  }
 
   render() {
-    const { loading, contacts, error } = this.state;
+    const { loading, contacts, error } = this.state
 
     const contactsSorted = contacts.sort((a, b) =>
-      a.name.localeCompare(b.name));
+      a.name.localeCompare(b.name))
 
     return (
       <View style={styles.container}>
-        {loading && <ActivityIndicator size="large" />}
+        {loading && <ActivityIndicator size='large' />}
         {error && <Text>Error...</Text>}
         {!loading &&
           !error && (
@@ -68,7 +71,7 @@ export default class Contacts extends React.Component {
             />
           )}
       </View>
-    );
+    )
   }
 }
 
@@ -78,4 +81,4 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     flex: 1,
   },
-});
+})

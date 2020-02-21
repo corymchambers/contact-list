@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import {
   StyleSheet,
   View,
@@ -6,11 +6,11 @@ import {
   Image,
   Text,
   ColorPropType,
-} from 'react-native';
-import Icon from 'react-native-vector-icons/MaterialIcons';
-import PropTypes from 'prop-types';
+} from 'react-native'
+import Icon from 'react-native-vector-icons/MaterialIcons'
+import PropTypes from 'prop-types'
 
-import colors from '../utils/colors';
+import colors from '../utils/colors'
 
 export default function ContactThumbnail({
   name,
@@ -21,8 +21,8 @@ export default function ContactThumbnail({
 }) {
   const colorStyle = {
     color: textColor,
-  };
-  const ImageComponent = onPress ? TouchableOpacity : View;
+  }
+  const ImageComponent = onPress ? TouchableOpacity : View
 
   return (
     <View style={styles.container}>
@@ -38,12 +38,12 @@ export default function ContactThumbnail({
 
       {phone !== '' && (
         <View style={styles.phoneSection}>
-          <Icon name="phone" size={16} style={{ color: textColor }} />
+          <Icon name='phone' size={16} style={{ color: textColor }} />
           <Text style={[styles.phone, colorStyle]}>{phone}</Text>
         </View>
       )}
     </View>
-  );
+  )
 }
 
 ContactThumbnail.propTypes = {
@@ -52,14 +52,14 @@ ContactThumbnail.propTypes = {
   phone: PropTypes.string,
   textColor: ColorPropType,
   onPress: PropTypes.func,
-};
+}
 
 ContactThumbnail.defaultProps = {
   name: '',
   phone: '',
   textColor: 'white',
   onPress: null,
-};
+}
 
 const styles = StyleSheet.create({
   container: {
@@ -92,4 +92,4 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: 'bold',
   },
-});
+})

@@ -1,9 +1,9 @@
-import React from 'react';
-import { StyleSheet, View, Text } from 'react-native';
-import Icon from 'react-native-vector-icons/MaterialIcons';
-import PropTypes from 'prop-types';
+import React from 'react'
+import { StyleSheet, View, Text } from 'react-native'
+import Icon from 'react-native-vector-icons/MaterialIcons'
+import PropTypes from 'prop-types'
 
-import colors from '../utils/colors';
+import colors from '../utils/colors'
 
 export default function DetailListItem({ icon, title, subtitle }) {
   return (
@@ -28,19 +28,19 @@ export default function DetailListItem({ icon, title, subtitle }) {
         </View>
       </View>
     </View>
-  );
+  )
 }
 
 DetailListItem.propTypes = {
   icon: PropTypes.string,
   title: PropTypes.string.isRequired,
   subtitle: PropTypes.string,
-};
+}
 
 DetailListItem.defaultProps = {
   icon: null,
   subtitle: null,
-};
+}
 
 const styles = StyleSheet.create({
   borderContainer: {
@@ -73,4 +73,4 @@ const styles = StyleSheet.create({
     fontSize: 15,
     marginTop: 4,
   },
-});
+})
